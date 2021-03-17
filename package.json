@@ -1,0 +1,42 @@
+{
+  "name": "kc3hack-front",
+  "version": "1.0.0",
+  "private": true,
+  "main": "dist/main/index.js",
+  "scripts": {
+    "dev": "npm-run-all -p dev:main dev:electron",
+    "dev:main": "cross-env NODE_ENV=development tsc -p src/main/tsconfig.json",
+    "dev:electron": "cross-env NODE_ENV=development electron .",
+    "dev:renderer": "cross-env NODE_ENV=development nuxt-ts src/renderer",
+    "build": "npm-run-all build:main build:renderer build:electron -- {@}",
+    "build:main": "cross-env NODE_ENV=production tsc -p src/main/tsconfig.json",
+    "build:renderer": "cross-env NODE_ENV=production nuxt-ts generate src/renderer",
+    "build:electron": "cross-env NODE_ENV=production electron-builder",
+    "build:all": "npm-run-all build -- -mwl",
+    "build:win": "npm-run-all build -- --win",
+    "build:mac": "npm-run-all build -- --mac",
+    "build:linux": "npm-run-all build -- --linux",
+    "clean": "npm-run-all clean:build clean:dist",
+    "clean:build": "rimraf build/*",
+    "clean:dist": "rimraf dist/*"
+  },
+  "dependencies": {
+    "@nuxt/typescript-runtime": "^2.0.1",
+    "@nuxtjs/axios": "^5.12.5",
+    "core-js": "^3.8.3",
+    "nuxt": "^2.14.12",
+    "vuesax": "^4.0.1-alpha.25",
+    "websocket": "^1.0.33"
+  },
+  "devDependencies": {
+    "@nuxt/types": "^2.14.12",
+    "@nuxt/typescript-build": "^2.0.4",
+    "cross-env": "^7.0.3",
+    "electron": "^12.0.1",
+    "electron-builder": "^22.10.5",
+    "electron-devtools-installer": "^3.1.1",
+    "npm-run-all": "^4.1.5",
+    "rimraf": "^3.0.2",
+    "typescript": "^4.2.3"
+  }
+}
