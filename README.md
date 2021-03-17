@@ -1,20 +1,15 @@
 # kc3hack-front
 
+Nuxt.js × Electron
+
 ## Build Setup
 
 ```bash
-# install dependencies
-$ yarn install
+# 環境をinstallするぞ
+$ yarn
 
-# serve with hot reload at localhost:3000
+# 新しいWindowが出てくるぞ
 $ yarn dev
-
-# build for production and launch server
-$ yarn build
-$ yarn start
-
-# generate static project
-$ yarn generate
 ```
 
 For detailed explanation on how things work, check out [Nuxt.js docs](https://nuxtjs.org).
