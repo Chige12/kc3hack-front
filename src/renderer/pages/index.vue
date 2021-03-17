@@ -41,8 +41,7 @@ export default {
   }
 }
 </script>
-
-<style>
+<style lang="scss" scoped>
 
 .title {
   font-family: "Quicksand", "Source Sans Pro", -apple-system, BlinkMacSystemFont,
