@@ -1,5 +1,6 @@
 <template>
   <div class="container">
+    <sideBar />
     <div>
       <header class="content-logos">
         <logo />
@@ -54,6 +55,7 @@
         </a>
       </div>
       <button @click="send">SEND</button>
+      <nuxt-link to="settings">Settings</nuxt-link>
     </div>
   </div>
 </template>
@@ -61,6 +63,7 @@
 <script>
 import Logo from '~/components/Logo.vue'
 import VuesaxLogo from '~/components/VuesaxLogo.vue'
+import sideBar from '~/components/sideBar.vue'
 
 import { w3cwebsocket } from 'websocket'
 const W3CWebSocket = w3cwebsocket
@@ -68,7 +71,8 @@ const W3CWebSocket = w3cwebsocket
 export default {
   components: {
     Logo,
-    VuesaxLogo
+    VuesaxLogo,
+    sideBar
   },
   data() {
     return {
