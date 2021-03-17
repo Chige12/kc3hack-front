@@ -26,7 +26,8 @@ export default {
 
   // Global CSS: https://go.nuxtjs.dev/config-css
   css: [
-    'vuesax/dist/vuesax.css'
+    'vuesax/dist/vuesax.css',
+    'boxicons/css/boxicons.min.css'
   ],
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins

@@ -1,9 +1,17 @@
-<template>
-  <div>
-    <Nuxt />
-  </div>
+<template lang="pug">
+  div
+    sideBar
+    .sidebar-padding
+      Nuxt
 </template>
-
+<script>
+import sideBar from '~/components/sideBar.vue'
+export default {
+  components: {
+    sideBar
+  }
+}
+</script>
 <style>
 html {
   font-family:
@@ -32,32 +40,18 @@ html {
   margin: 0;
 }
 
-.button--green {
-  display: inline-block;
-  border-radius: 4px;
-  border: 1px solid #3b8070;
-  color: #3b8070;
-  text-decoration: none;
-  padding: 10px 30px;
+.sidebar-padding {
+  padding-left: 50px;
 }
 
-.button--green:hover {
-  color: #fff;
-  background-color: #3b8070;
+.container {
+  margin: auto;
+  width: 100%;
+  max-width: 1024px;
+  padding: 0 24px;
 }
 
-.button--grey {
-  display: inline-block;
-  border-radius: 4px;
-  border: 1px solid #35495e;
-  color: #35495e;
-  text-decoration: none;
-  padding: 10px 30px;
-  margin-left: 15px;
-}
-
-.button--grey:hover {
-  color: #fff;
-  background-color: #35495e;
+.header {
+  padding: 48px 0 32px;
 }
 </style>

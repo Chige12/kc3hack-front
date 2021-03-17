@@ -1,69 +1,9 @@
-<template>
-  <div class="container">
-    <sideBar />
-    <div>
-      <header class="content-logos">
-        <logo />
-        <span class="plus">+</span>
-        <VuesaxLogo />
-      </header>
-      <h1 class="title">Nuxt.js + Vuesax</h1>
-      <div class="links">
-        <h3 class="h3">Vuesax</h3>
-        <a
-          href="https://vuesax.com/"
-          target="_blank"
-          rel="noopener noreferrer"
-          class="button--green"
-        >
-          Documentation
-        </a>
-        <a
-          href="https://discordapp.com/invite/9dsKtvB"
-          target="_blank"
-          rel="noopener noreferrer"
-          class="button--grey"
-        >
-          Discord
-        </a>
-        <a
-          href="https://github.com/lusaxweb/vuesax"
-          target="_blank"
-          rel="noopener noreferrer"
-          class="button--grey"
-        >
-          GitHub
-        </a>
-      </div>
-      <div class="links">
-        <h3 class="h3">Nuxt.js</h3>
-        <a
-          href="https://nuxtjs.org/"
-          target="_blank"
-          rel="noopener noreferrer"
-          class="button--green"
-        >
-          Documentation
-        </a>
-        <a
-          href="https://github.com/nuxt/nuxt.js"
-          target="_blank"
-          rel="noopener noreferrer"
-          class="button--grey"
-        >
-          GitHub
-        </a>
-      </div>
-      <button @click="send">SEND</button>
-      <nuxt-link to="settings">Settings</nuxt-link>
-    </div>
-  </div>
+<template lang="pug">
+  .container
 </template>
-
 <script>
 import Logo from '~/components/Logo.vue'
 import VuesaxLogo from '~/components/VuesaxLogo.vue'
-import sideBar from '~/components/sideBar.vue'
 
 import { w3cwebsocket } from 'websocket'
 const W3CWebSocket = w3cwebsocket
@@ -72,7 +12,6 @@ export default {
   components: {
     Logo,
     VuesaxLogo,
-    sideBar
   },
   data() {
     return {
@@ -104,14 +43,6 @@ export default {
 </script>
 
 <style>
-.container {
-  margin: 0 auto;
-  min-height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-}
 
 .title {
   font-family: "Quicksand", "Source Sans Pro", -apple-system, BlinkMacSystemFont,

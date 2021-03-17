@@ -23,6 +23,7 @@
   "dependencies": {
     "@nuxt/typescript-runtime": "^2.0.1",
     "@nuxtjs/axios": "^5.12.5",
+    "boxicons": "^2.0.7",
     "core-js": "^3.8.3",
     "nuxt": "^2.14.12",
     "vuesax": "^4.0.1-alpha.25",
@@ -40,7 +41,7 @@
     "pug": "^3.0.2",
     "pug-plain-loader": "^1.1.0",
     "rimraf": "^3.0.2",
-    "sass-loader": "^11.0.1",
+    "sass-loader": "10.1.1",
     "typescript": "^4.2.3"
   }
 }
