@@ -40,6 +40,10 @@ html {
   margin: 0;
 }
 
+a {
+  text-underline-position: under;
+}
+
 .sidebar-padding {
   padding-left: 50px;
 }

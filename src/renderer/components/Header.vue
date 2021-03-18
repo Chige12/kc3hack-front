@@ -1,12 +1,12 @@
 <template lang="pug">
   .container
-    vs-row.columns
-      vs-col(vs-type="flex" vs-justify="center" vs-align="center" w="1")
+    .row
+      .col.col-icon(vs-type="flex" vs-justify="left" vs-align="center" w="1")
         vs-button(icon border :to="link" v-if="link").icon-button
           i.bx.bx-arrow-back(v-if="icon === 'back'")
         vs-button(icon border v-if="!link" disabled).icon-button
           i.bx.bx-cog(v-if="icon === 'cog'")
-      vs-col(vs-type="flex" vs-justify="center" vs-align="center" w="11")
+      .col(vs-type="flex" vs-justify="left" vs-align="center" w="11")
         h2.title {{title}}
 </template>
 <script>
@@ -56,17 +56,26 @@ export default {
 </script>
 <style lang="scss" scoped>
 
-.columns {
+.row {
   display: flex;
-  align-items: center !important;
+  flex-wrap: nowrap;
+  justify-content: flex-start;
+  align-items: center;
   padding: 0 20px;
+}
+
+.col-icon {
+  flex-shrink: 0;
 }
 
 .icon-button {
   border: none;
   width: 38px;
   height: 38px;
-  margin-right: 16px;
+  margin-right: 24px;
+  &:disabled {
+    opacity: 1;
+  }
 }
 
 .header-page.fixed .header__content:after {

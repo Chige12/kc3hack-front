@@ -5,15 +5,15 @@
   .container
     .grid
       vs-button(transparent block size="xl" to="/settings/response").list-button
-        vs-row.list-item
-          vs-col(vs-type="flex" vs-justify="center" vs-align="center" w="1")
+        .list-item
+          .col(vs-type="flex" vs-justify="center" vs-align="center" w="1")
             vs-avatar: i.bx.bx-list-ol
-          vs-col(vs-type="flex" vs-justify="center" vs-align="center" w="11") 応対
+          .col(vs-type="flex" vs-justify="center" vs-align="center" w="11") 応対
       vs-button(transparent block size="xl" to="/settings/notification").list-button
-        vs-row.list-item
-          vs-col(vs-type="flex" vs-justify="center" vs-align="center" w="1")
+        .list-item
+          .col(vs-type="flex" vs-justify="center" vs-align="center" w="1")
             vs-avatar: i.bx.bx-bell
-          vs-col(vs-type="flex" vs-justify="center" vs-align="center" w="11") 通知
+          .col(vs-type="flex" vs-justify="center" vs-align="center" w="11") 通知
 </template>
 <script>
 import Header from '~/components/Header.vue'
@@ -41,6 +41,11 @@ export default {
     width: 100%;
     text-align: left;
     color: rgb(30,30,30);
-    align-items: center !important;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+  }
+  .col {
+    padding-right: 20px;
   }
 </style>

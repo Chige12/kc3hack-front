@@ -7,12 +7,11 @@
     .grid
       .list-item(v-for="res in responses" :key="res.text")
         vs-button(transparent block size="xl" :to="`/settings/response/${res.number}`").list-button
-          vs-row.list-item-columns
-            vs-col(vs-type="flex" vs-justify="center" vs-align="center" w="3")
-              .list-item-number
-                .number-box {{res.number}}
-                span を押した場合
-            vs-col.list-item-text(vs-type="flex" vs-justify="center" vs-align="center" w="9") {{res.text}}
+          .list-item-columns
+            .list-item-number(vs-type="flex" vs-justify="center" vs-align="center" w="3")
+              .number-box {{res.number}}
+              span を押した場合
+            .list-item-text(vs-type="flex" vs-justify="center" vs-align="center" w="9") {{res.text}}
 </template>
 <script>
 import Header from '~/components/Header.vue'
@@ -61,15 +60,21 @@ export default {
   }
   .list-item-columns {
     width: 100%;
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+    align-items: center;
     text-align: left;
     color: rgb(30,30,30);
-    align-items: center !important;
   }
   .list-item-number {
+    max-width: 200px;
     display: flex;
     flex-wrap: nowrap;
     align-items: center;
+    flex-shrink: 0;
     color: rgba(30,30,30, 0.8);
+    padding-right: 32px;
   }
   .number-box {
     width: 38px;
