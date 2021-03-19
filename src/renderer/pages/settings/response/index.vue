@@ -5,7 +5,7 @@
     Breadcrumb(:items="breadcrumb")
   .container
     .grid
-      .list-item(v-for="res in responses" :key="res.text")
+      .list-item(v-for="res in responseArr" :key="res.text")
         vs-button(transparent block size="xl" :to="`/settings/response/${res.number}`").list-button
           .list-item-columns
             .list-item-number(vs-type="flex" vs-justify="center" vs-align="center" w="3")
@@ -16,26 +16,18 @@
 <script>
 import Header from '~/components/Header.vue'
 import Breadcrumb from '~/components/breadcrumb.vue'
+import {mapState} from 'vuex';
 
 export default {
   components: {
     Header,
     Breadcrumb
   },
+  computed: {
+    ...mapState(['responseArr'])
+  },
   data() {
     return{
-      responses: [
-        {
-          number: 1,
-          text: '知人',
-          sounds: '知人の方は'
-        },
-        {
-          number: 2,
-          text: 'その他',
-          sounds: 'そうでない方は'
-        }
-      ],
       breadcrumb: [
         {
           name: '設定',
