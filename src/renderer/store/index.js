@@ -3,21 +3,27 @@ export const state = () => ({
     {
       number: 1,
       text: '知人',
-      sounds: '知人の方は'
+      sounds: '知人の方は',
+      type: 'check'
     },
     {
       number: 2,
       text: 'その他',
-      sounds: 'そうでない方は'
+      sounds: 'そうでない方は',
+      type: 'gohome'
     }
-  ]
+  ],
+  socketData: {}
 })
 
 export const mutations = {
-  changeResponse(state) {
-    state.responseArr = []
+  updateResponse(state, newResponseArr) {
+    state.responseArr = newResponseArr
   },
   addResponse(state) {
     state.responseArr.push({})
+  },
+  setSocketData(state, newData) {
+    state.socketData = newData
   }
 }

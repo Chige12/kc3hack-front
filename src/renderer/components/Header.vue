@@ -6,6 +6,7 @@
           i.bx.bx-arrow-back(v-if="icon === 'back'")
         vs-button(icon border v-if="!link" disabled).icon-button
           i.bx.bx-cog(v-if="icon === 'cog'")
+          i.bx.bx-home(v-if="icon === 'home'")
       .col(vs-type="flex" vs-justify="left" vs-align="center" w="11")
         h2.title {{title}}
 </template>
