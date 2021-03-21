@@ -13,7 +13,8 @@ export const state = () => ({
       type: 'gohome'
     }
   ],
-  socketData: {}
+  socketData: {
+  }
 })
 
 export const mutations = {

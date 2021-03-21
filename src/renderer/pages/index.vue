@@ -2,13 +2,13 @@
   .container
     Header(:title="'Home'" :link="null" :icon="'home'").header
     .wrapper
-      .text-wrapper
-        p 接続済み
+      vs-button(to="/settings" size="large" border)
+        i.bx.bx-cog
+        | 設定
     .wrapper
       .text-wrapper
         small テストツール
       .columns
-        vs-button(transparent @click="send") SEND
         vs-button(transparent @click="checkInHome()") 在宅確認
         vs-button(transparent @click="forceSiren()") サイレン
     vs-dialog(width="550px" not-center v-model="isCheckInHomeDialogShowed")
@@ -56,13 +56,13 @@ export default {
   watch: {
     socketData(val) {
       if (val.target === 'DOOR') return
+      this.$store.commit('setSocketData')
       if (val.message === '在宅確認') {
         this.checkInHome()
       }
       if (val.message === 'サイレン') {
         this.forceSiren()
       }
-      this.$store.commit('setSocketData')
     },
     isCheckInHomeDialogShowed(val) {
       if (!val) {
@@ -73,7 +73,7 @@ export default {
   created() {
     const self = this
     self.socket.onmessage = function(e) {
-      if (e.charAt(0) !== '{') return
+      if (e.data.charAt(0) !== '{') return
       if (typeof e.data === 'string') {
         self.socketData = JSON.parse(e.data)
         console.log(e)
@@ -82,11 +82,11 @@ export default {
   },
   methods: {
     sendZaitakuMsg() {
-      isCheckInHomeDialogShowed = false
+      this.isCheckInHomeDialogShowed = false
       this.socket.send(JSON.stringify(this.zaitakuMsg))
     },
     sendFuzaiMsg() {
-      isCheckInHomeDialogShowed = false
+      this.isCheckInHomeDialogShowed = false
       this.socket.send(JSON.stringify(this.fuzaiMsg))
     },
     checkInHome() {
@@ -166,7 +166,12 @@ export default {
   margin: 10px;
 }
 
+.bx-cog {
+  margin-right: 4px;
+}
+
 .wrapper {
+  margin-bottom: 24px;
   padding: 0 20px;
 }
 .text-wrapper {

@@ -9,8 +9,6 @@
     .overLayer
       .wrapper
         h2 来客です
-        .con-content
-          p(v-if="socketData.visitor") 玄関に {{socketData.visitor}} が来ています。
         .columns
           vs-button(@click="sendZaitakuMsg" size="xl") 玄関へ出る
           vs-button(@click="sendFuzaiMsg" size="xl" dark) 無視する
@@ -43,7 +41,7 @@ export default {
     }
   },
   computed: {
-    ...mapState(['socketData'])
+    ...mapState(['socketData']),
   },
   methods: {
     sendZaitakuMsg() {
